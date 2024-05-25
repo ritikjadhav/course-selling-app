@@ -1,8 +1,12 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-mongoose.connect('mongodb+srv://ritiksjadhav:TUSi73bQJSa0fJRc@cluster0.h9yfro6.mongodb.net/').then(() => {
-  console.log('database connected');
-});
+mongoose
+  .connect(
+    "mongodb+srv://ritiksjadhav:<password>@cluster0.h9yfro6.mongodb.net/"
+  )
+  .then(() => {
+    console.log("database connected");
+  });
 
 const AdminSchema = mongoose.Schema({
   username: String,
@@ -16,8 +20,8 @@ const CourseSchema = mongoose.Schema({
   imageLink: String,
 });
 
-const Admin = mongoose.model('adminModel', AdminSchema);
-const Course = mongoose.model('courseModel', CourseSchema);
+const Admin = mongoose.model("adminModel", AdminSchema);
+const Course = mongoose.model("courseModel", CourseSchema);
 
 module.exports = {
   Admin,
